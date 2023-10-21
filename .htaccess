@@ -1,0 +1,29 @@
+<FilesMatch "\.(bak|inc|lib|sh|tpl|lbi|dwt)$">
+    order deny,allow
+    deny from all
+</FilesMatch>
+RewriteEngine On
+RewriteRule ^([\w/]*)(Article)_(List)_([0-9]+)[_]*(([0-9]+-[0-9]+)*(_[0-9]+-[0-9]+)*)[_]*([0-9]*)(/*[\s\S]*)$       $1index\.php\?ac=$2&at=$3&tid=$4&sku_key=$5&pageid=$8 [QSA,L]
+RewriteRule ^([\w/]*)(Article)_(Read)_([0-9]+)[_]*([0-9]*)(/*[\s\S]*)$      $1index\.php\?ac=$2&at=$3&did=$4&page=$5 [QSA,L]
+RewriteRule ^([\w/]*)(Article)_(SubList)_([0-9]+)[_]*([0-9]*)(/*[\s\S]*)$       $1index\.php\?ac=$2&at=$3&sid=$4&pageid=$5 [QSA,L]
+RewriteRule ^([\w/]*)(Article)_(Tags)[_]*([0-9]*)[/]*([\s\S]*)$       $1index\.php\?ac=$2&at=$3&key=$5&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Order)_(Buy)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&did=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Order)_([a-zA-Z]+)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&oid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(OrderMain)_(List)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(OrderMain)_([a-zA-Z]+)[_]*([0-9]*)[_]*([a-zA-Z]*)$       $1index\.php\?ac=$2&at=$3&oid=$4&type=$5 [QSA,L]
+RewriteRule ^([\w/]*)(Member)_([a-zA-Z]+)$       $1index\.php\?ac=$2&at=$3 [QSA,L]
+RewriteRule ^([\w/]*)(MemberMain)_([a-zA-Z]+)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Enquiry)_(Into)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&did=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Enquiry)_([a-zA-Z]+)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&oid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(EnquiryMain)_(List)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(EnquiryMain)_([a-zA-Z]+)[_]*([0-9]*)[_]*([a-zA-Z]*)$       $1index\.php\?ac=$2&at=$3&eid=$4&type=$5 [QSA,L]
+RewriteRule ^([\w/]*)(Forum)_(List)_([0-9]+)[_]*([0-9]*)(/*[\s\S]*)$       $1index\.php\?ac=$2&at=$3&btid=$4&pageid=$5 [QSA,L]
+RewriteRule ^([\w/]*)(Form)_(List)_([0-9]+)(/*[\s\S]*)$      $1index\.php\?ac=$2&at=$3&fgid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(MyCoupon)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(UnCoupon)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(GetCoupon)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&pageid=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(Pull)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&coupon_id=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(ReadActivity)[_]*([0-9]*)$       $1index\.php\?ac=$2&at=$3&coupon_id=$4 [QSA,L]
+RewriteRule ^([\w/]*)(Coupon)_(CheckCoupon)$       $1index\.php\?ac=$2&at=$3 [QSA,L]
+RewriteRule ^([\w/]*)(MemberMoblie)_([a-zA-Z]+)$       $1index\.php\?ac=$2&at=$3 [QSA,L]
+RewriteRule ^([\w/]*)(lng)_([\w]+)$       $1index\.php\?lng=$3 [QSA,L]
